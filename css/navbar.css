@@ -1,0 +1,172 @@
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+nav {
+  width: 90%;
+  max-width: 1200px;
+  height: 70px;
+  margin: 20px auto;
+  background-color: #bf208a;
+  border-radius: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 40px;
+  position: fixed;
+  top: 20px;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+}
+
+nav .logo {
+  height: 50px;
+  width: auto;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+  transition: all 0.3s ease;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: white;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  border-radius: 8px;
+  padding: 8px 16px;
+  border: 2px solid transparent;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+nav ul li a:hover {
+  border-color: #ff9900;
+  background-color: rgba(255, 153, 0, 0.1);
+  transform: translateY(-2px);
+}
+
+/* Estilos del menú hamburguesa */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  padding: 5px;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+
+.hamburger:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.hamburger span {
+  width: 25px;
+  height: 3px;
+  background-color: white;
+  margin: 3px 0;
+  border-radius: 3px;
+  transition: all 0.3s ease;
+  transform-origin: center;
+}
+
+/* Animación del menú hamburguesa cuando está activo */
+.hamburger.active span:nth-child(1) {
+  transform: rotate(45deg) translate(6px, 6px);
+}
+
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+  transform: scale(0);
+}
+
+.hamburger.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(6px, -6px);
+}
+
+/* Media Queries para responsividad */
+@media screen and (max-width: 768px) {
+  nav {
+    width: 95%;
+    padding: 0 20px;
+  }
+
+  nav ul {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: #bf208a;
+    border-radius: 0 0 12px 12px;
+    flex-direction: column;
+    gap: 0;
+    padding: 20px 0;
+    transform: translateY(-20px);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  }
+
+  nav ul.active {
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+  }
+
+  nav ul li {
+    text-align: center;
+    margin: 5px 0;
+  }
+
+  nav ul li a {
+    display: block;
+    padding: 15px 20px;
+    margin: 0 20px;
+    border-radius: 8px;
+    font-size: 18px;
+  }
+
+  nav ul li a:hover {
+    background-color: rgba(255, 153, 0, 0.2);
+    transform: none;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  nav {
+    width: 98%;
+    padding: 0 15px;
+    margin: 10px auto;
+  }
+
+  nav .logo {
+    height: 40px;
+    width: 40px;
+  }
+
+  nav ul li a {
+    font-size: 16px;
+    padding: 12px 15px;
+  }
+}

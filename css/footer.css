@@ -1,0 +1,35 @@
+/* Estilo general del footer */
+.footer {
+  background-color: #f5f5f5; /* fondo claro */
+  color: white;
+  padding: 20px 0;
+  text-align: center;
+  border-top: 1px solid #d348a5; /* borde rosado en la parte superior */
+}
+
+/* Iconos de redes sociales */
+.footer .social-icons a {
+  margin: 0 10px;
+  display: inline-block;
+  transition: transform 0.3s;
+}
+
+.footer .social-icons a:hover {
+  transform: scale(1.2);
+}
+
+/* Colores de las redes sociales */
+#facebook svg path {
+  fill: #1877f2;
+}
+
+#instagram svg path {
+  fill: #e1306c;
+}
+
+/* Copyright */
+.copyright {
+  margin-top: 20px;
+  font-size: 14px;
+  color: black;
+}
