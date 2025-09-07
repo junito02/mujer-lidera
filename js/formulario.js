@@ -1,15 +1,13 @@
-// Inicializa EmailJS con tu User ID / Public Key
 emailjs.init("5II775cZYsyqYXW1I");
 
-// Selecciona el formulario por clase
 const form = document.querySelector(".form-contacto");
 const boton = form.querySelector('button[type="submit"]');
 
 form.addEventListener("submit", function (e) {
-  e.preventDefault(); // Evita que se recargue la página
+  e.preventDefault();
   boton.textContent = "Enviando...";
 
-  // Envía el formulario usando tu Service ID y Template ID
+  //esta parte envia el formulario usando el id y template id ya creado:ojo  es una prueba
   emailjs.sendForm("service_r99xs1k", "template_fk36tow", this).then(
     () => {
       boton.textContent = "Enviado";

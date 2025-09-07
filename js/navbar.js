@@ -20,6 +20,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 });
+//*********************************************************************************************************************** */
 document.addEventListener("DOMContentLoaded", function () {
   const hamburger = document.querySelector(".hamburger"); // Botón hamburguesa
   const navMenu = document.querySelector("nav ul"); // Menú de navegación
@@ -62,7 +63,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 });
-
+//**************************************************************************************************************** */
 document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
   anchor.addEventListener("click", function (e) {
     e.preventDefault();
