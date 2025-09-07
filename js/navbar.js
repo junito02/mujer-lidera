@@ -1,87 +1,79 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const links = document.querySelectorAll("nav ul li a");
+  const links = document.querySelectorAll("nav ul li a"); // Selecciona todos los links dentro del nav
 
   links.forEach((link) => {
     link.addEventListener("click", (e) => {
-      e.preventDefault();
+      e.preventDefault(); // Evita que el link navegue de manera tradicional
 
-      const targetId = link.getAttribute("href");
-      const targetSection = document.querySelector(targetId);
+      const targetId = link.getAttribute("href"); // Obtiene el ID del destino
+      const targetSection = document.querySelector(targetId); // Busca la sección correspondiente
 
       if (targetSection) {
-        const navbarHeight = document.querySelector("nav").offsetHeight;
-        const sectionPosition = targetSection.offsetTop - navbarHeight;
+        const navbarHeight = document.querySelector("nav").offsetHeight; // Altura de la navbar
+        const sectionPosition = targetSection.offsetTop - navbarHeight; // Ajusta la posición para no tapar la sección
 
         window.scrollTo({
-          top: sectionPosition,
-          behavior: "smooth",
+          top: sectionPosition, // Mueve la página hasta la sección
+          behavior: "smooth", // Con efecto suave
         });
       }
     });
   });
 });
-// JavaScript para el menú hamburguesa responsivo
 document.addEventListener("DOMContentLoaded", function () {
-  const hamburger = document.querySelector(".hamburger");
-  const navMenu = document.querySelector("nav ul");
-  const navLinks = document.querySelectorAll("nav ul li a");
+  const hamburger = document.querySelector(".hamburger"); // Botón hamburguesa
+  const navMenu = document.querySelector("nav ul"); // Menú de navegación
+  const navLinks = document.querySelectorAll("nav ul li a"); // Todos los links
 
-  // Función para toggle del menú
   function toggleMenu() {
-    hamburger.classList.toggle("active");
-    navMenu.classList.toggle("active");
+    hamburger.classList.toggle("active"); // Activa/desactiva animación del icono
+    navMenu.classList.toggle("active"); // Muestra/oculta el menú
 
-    // Opcional: Prevenir scroll del body cuando el menú está abierto
     if (navMenu.classList.contains("active")) {
-      document.body.style.overflow = "hidden";
+      document.body.style.overflow = "hidden"; // Evita scroll cuando el menú está abierto
     } else {
-      document.body.style.overflow = "auto";
+      document.body.style.overflow = "auto"; // Permite scroll cuando el menú está cerrado
     }
   }
 
-  // Event listener para el botón hamburguesa
-  hamburger.addEventListener("click", toggleMenu);
+  hamburger.addEventListener("click", toggleMenu); // Click en hamburguesa abre/cierra menú
 
-  // Cerrar el menú cuando se hace click en un enlace (para mobile)
   navLinks.forEach((link) => {
     link.addEventListener("click", () => {
       if (navMenu.classList.contains("active")) {
-        toggleMenu();
+        toggleMenu(); // Cierra menú al hacer clic en un link
       }
     });
   });
 
-  // Cerrar el menú cuando se hace click fuera de él
   document.addEventListener("click", function (event) {
-    const isClickInsideNav = event.target.closest("nav");
+    const isClickInsideNav = event.target.closest("nav"); // Detecta si el clic fue dentro del nav
 
     if (!isClickInsideNav && navMenu.classList.contains("active")) {
-      toggleMenu();
+      toggleMenu(); // Cierra menú si se clickea fuera
     }
   });
 
-  // Cerrar el menú cuando se redimensiona la ventana
   window.addEventListener("resize", function () {
     if (window.innerWidth > 768 && navMenu.classList.contains("active")) {
-      hamburger.classList.remove("active");
-      navMenu.classList.remove("active");
-      document.body.style.overflow = "auto";
+      hamburger.classList.remove("active"); // Quita animación
+      navMenu.classList.remove("active"); // Cierra menú
+      document.body.style.overflow = "auto"; // Permite scroll
     }
   });
 });
 
-// Opcional: Smooth scroll mejorado para los enlaces internos
 document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
   anchor.addEventListener("click", function (e) {
     e.preventDefault();
 
-    const target = document.querySelector(this.getAttribute("href"));
+    const target = document.querySelector(this.getAttribute("href")); // Sección destino
     if (target) {
-      const offsetTop = target.offsetTop - 100; // Ajusta según la altura de tu navbar
+      const offsetTop = target.offsetTop - 100; // Ajuste de 100px desde arriba
 
       window.scrollTo({
         top: offsetTop,
-        behavior: "smooth",
+        behavior: "smooth", // Scroll suave
       });
     }
   });

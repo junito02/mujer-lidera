@@ -42,6 +42,7 @@
     <link rel="stylesheet" href="./css/styles.css" />
     <link rel="stylesheet" href="./css/FormularioStyle.css" />
     <link rel="stylesheet" href="./css/footer.css" />
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
   </head>
 
   <body>
@@ -80,9 +81,9 @@
               propósito en todas sus dimensiones.
             </p>
             <div class="hero-buttons">
-              <button class="btn btn-hero" onclick="joinCommunity()">
+              <a href="#contacto" class="btn btn-hero">
                 Únete a la Comunidad
-              </button>
+              </a>
               <button class="btn btn-elegant" onclick="learnMore()">
                 Conoce Más
               </button>
@@ -208,12 +209,27 @@
     <main id="contacto" class="contenedor">
       <h2 class="text-form">Mujer Lidera 360° - Formulario</h2>
       <form class="form-contacto">
-        <input type="text" placeholder="Nombre" required />
-        <input type="text" placeholder="Apellido" required />
-        <input type="text" placeholder="Numero Telefonico" required />
-        <input type="email" placeholder="Correo Electronico" required />
-        <textarea placeholder="Cuentanos sobre ti..." required></textarea>
-        <button class="btn btn-elegant">Enviar</button>
+        <input type="text" name="nombre" placeholder="Nombre" required />
+        <input type="text" name="apellido" placeholder="Apellido" required />
+        <input
+          type="text"
+          name="telefono"
+          placeholder="Numero Telefonico"
+          required
+        />
+        <input
+          type="email"
+          name="email"
+          placeholder="Correo Electronico"
+          required
+        />
+        <textarea
+          type="text"
+          name="mensaje"
+          placeholder="mensaje"
+          required
+        ></textarea>
+        <button type="submit" class="btn btn-elegant">Enviar</button>
       </form>
     </main>
     <footer class="footer">
@@ -260,5 +276,6 @@
 
     <script src="./js/script.js"></script>
     <script src="./js/navbar.js"></script>
+    <script src="./js/formulario.js"></script>
   </body>
 </html>

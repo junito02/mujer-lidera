@@ -107,10 +107,9 @@ h6 {
   transform: scale(1.05);
 }
 
-.btn-elegant {
-  background: white;
-  color: var(--primary);
-  border: 1px solid var(--primary);
+.btn-elegant:hover {
+  background-color: #af51af;
+  transition: all 1s ease;
 }
 
 .btn-elegant:hover {
